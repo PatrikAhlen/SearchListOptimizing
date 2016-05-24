@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="SearchListOptimizing.View.ProcessListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SearchListOptimizing.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance local:ProcessListView}">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="ProcessListor"/>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Ej utsända" Margin="5 0"/>
+                <TextBlock Text="{Binding TotalCount}"/>
+            </StackPanel>
+            <StackPanel Margin="5" DataContext="{Binding ProcessStepNotSentViewModel}" Orientation="Vertical" VerticalAlignment="Stretch">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding ViewCount}" Margin="5 0"/>
+                </StackPanel>
+                <ListView ItemsSource="{Binding ProcessLists}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Margin="5 0" Text="{Binding Name}" />
+                                <TextBlock Text="{Binding ListCount}"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+
+            <StackPanel Margin="5" DataContext="{Binding CollectionUnitsNotAnswered}" Orientation="Vertical" VerticalAlignment="Stretch">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding ViewCount}" Margin="5 0"/>
+                </StackPanel>
+                <ListView ItemsSource="{Binding ProcessLists}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Margin="5 0" Text="{Binding Name}" />
+                                <TextBlock Text="{Binding ListCount}"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
