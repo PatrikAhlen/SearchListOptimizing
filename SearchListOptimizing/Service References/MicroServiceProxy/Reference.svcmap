@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a0553c8d-8633-4afc-856b-eba70bc23b18" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/IL.Service.WebHost/Ilmicroservice.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ILMicroService.xsd" MetadataType="Schema" ID="64ee709b-e52a-4b84-ab42-99c1547786ec" SourceId="1" SourceUrl="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ILMicroService1.xsd" MetadataType="Schema" ID="34d1e562-a772-4af5-8c9a-f17badea02b3" SourceId="1" SourceUrl="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ILMicroService.wsdl" MetadataType="Wsdl" ID="219ea567-4ab9-409d-b58b-10d22f27916f" SourceId="1" SourceUrl="http://localhost/IL.Service.WebHost/ILMicroService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ILMicroService2.xsd" MetadataType="Schema" ID="cbc77402-0496-4b02-895d-97aa6c450cd9" SourceId="1" SourceUrl="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ILMicroService3.xsd" MetadataType="Schema" ID="ef5b4619-5e46-4930-bcc1-84f23cb80f2e" SourceId="1" SourceUrl="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ILMicroService4.xsd" MetadataType="Schema" ID="9402f09b-c4b1-4632-9422-b9fa63981470" SourceId="1" SourceUrl="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ILMicroService1.wsdl" MetadataType="Wsdl" ID="59f77d15-e291-44d7-ba6a-49ca1664185b" SourceId="1" SourceUrl="http://localhost/IL.Service.WebHost/ILMicroService.svc?wsdl" />
+    <MetadataFile FileName="ILMicroService5.xsd" MetadataType="Schema" ID="3535d2ed-7218-4c70-92df-2fd6e9a23196" SourceId="1" SourceUrl="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ILMicroService6.xsd" MetadataType="Schema" ID="edd86160-4ec3-49f3-968d-01f3b434cd5b" SourceId="1" SourceUrl="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ILMicroService.disco" MetadataType="Disco" ID="b5e4d0fb-e504-40e5-bf79-5cfdd234b3a8" SourceId="1" SourceUrl="http://localhost/IL.Service.WebHost/ILMicroService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

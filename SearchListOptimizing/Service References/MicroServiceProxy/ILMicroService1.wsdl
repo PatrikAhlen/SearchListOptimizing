@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://scb.se/il/contract/MicroClient/2015/11" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ILMicroService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://scb.se/il/contract/MicroClient/2015/11" location="http://localhost/IL.Service.WebHost/ILMicroService.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="MicroServiceEndpoint" type="i0:IILMicroService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddSurveyNote">
+      <soap:operation soapAction="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/AddSurveyNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailFault">
+        <soap:fault use="literal" name="ErrorDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSurveyNoteById">
+      <soap:operation soapAction="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/DeleteSurveyNoteById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailFault">
+        <soap:fault use="literal" name="ErrorDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteImportedSurveyNotesBySurveyId">
+      <soap:operation soapAction="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/DeleteImportedSurveyNotesBySurveyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailFault">
+        <soap:fault use="literal" name="ErrorDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSurveyNotes">
+      <soap:operation soapAction="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetSurveyNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailFault">
+        <soap:fault use="literal" name="ErrorDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSurveyNote">
+      <soap:operation soapAction="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/UpdateSurveyNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailFault">
+        <soap:fault use="literal" name="ErrorDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ImportSurveyNote">
+      <soap:operation soapAction="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/ImportSurveyNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailFault">
+        <soap:fault use="literal" name="ErrorDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeriodicOverview">
+      <soap:operation soapAction="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetPeriodicOverview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailFault">
+        <soap:fault use="literal" name="ErrorDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnswerCollections">
+      <soap:operation soapAction="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetAnswerCollections" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailFault">
+        <soap:fault use="literal" name="ErrorDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateAnswerCollection">
+      <soap:operation soapAction="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/ActivateAnswerCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailFault">
+        <soap:fault use="literal" name="ErrorDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateAnswerCollection">
+      <soap:operation soapAction="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/DeactivateAnswerCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailFault">
+        <soap:fault use="literal" name="ErrorDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewColletionOccasionFromMergedResult">
+      <soap:operation soapAction="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/CreateNewColletionOccasionFromMergedResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorDetailFault">
+        <soap:fault use="literal" name="ErrorDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchListItems">
+      <soap:operation soapAction="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetSearchListItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ILMicroService">
+    <wsdl:port name="MicroServiceEndpoint" binding="tns:MicroServiceEndpoint">
+      <soap:address location="http://localhost/IL.Service.WebHost/ILMicroService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

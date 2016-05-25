@@ -27,7 +27,7 @@ namespace SearchListOptimizing.ViewModel
 
         public ProcessStepNotSentViewModel(ObservableCollection<CollectionUnitListObject> collectionUnitListObjects)
         {
-            CollectionUnitsInProcess = collectionUnitListObjects.Where(x => x.Status == "1");
+            CollectionUnitsInProcess = collectionUnitListObjects.Where(x => x.Status == "01");
             Name = "Ej utsända";
             ProcessLists = CreateProcessLists();
         }
@@ -36,18 +36,18 @@ namespace SearchListOptimizing.ViewModel
         {
             var _processList = new ObservableCollection<ProcessList>
             {
-                new ProcessList(CollectionUnitsInProcess, "List1", "Variable1", 1),
-                new ProcessList(CollectionUnitsInProcess, "List2", "Variable2", 1),
-                new ProcessList(CollectionUnitsInProcess, "List3", "Variable3", 1),
-                new ProcessList(CollectionUnitsInProcess, "List4", "Variable4", 1),
-                new ProcessList(CollectionUnitsInProcess, "List5", "Variable4", 2),
-                new ProcessList(CollectionUnitsInProcess, "List6", "Variable4", 3),
-                new ProcessList(CollectionUnitsInProcess, "List7", "Variable4", 4),
-                new ProcessList(CollectionUnitsInProcess, "List8", "Variable4", 5),
-                new ProcessList(CollectionUnitsInProcess, "List9", "Variable4", 6),
-                new ProcessList(CollectionUnitsInProcess, "List10", "Variable4", 7),
-                new ProcessList(CollectionUnitsInProcess, "List11", "Variable4", 8),
-                new ProcessList(CollectionUnitsInProcess, "List12", "Variable4", 9),
+                new ProcessList(CollectionUnitsInProcess, "List1", "VarAlice", "a"),
+                new ProcessList(CollectionUnitsInProcess, "List2", "VarAlice", "b"),
+                new ProcessList(CollectionUnitsInProcess, "List3", "VarAlice", "c"),
+                new ProcessList(CollectionUnitsInProcess, "List4", "VarAlice", "d"),
+                new ProcessList(CollectionUnitsInProcess, "List5", "VarAlice", "e"),
+                new ProcessList(CollectionUnitsInProcess, "List6", "VarAlice", "f"),
+                new ProcessList(CollectionUnitsInProcess, "List7", "VarAlice", "g"),
+                new ProcessList(CollectionUnitsInProcess, "List8", "VarAlice", "h"),
+                new ProcessList(CollectionUnitsInProcess, "List9", "VarAlice", "i"),
+                new ProcessList(CollectionUnitsInProcess, "List10", "VarAlice", "j"),
+                new ProcessList(CollectionUnitsInProcess, "List11", "VarAlice", "k"),
+                new ProcessList(CollectionUnitsInProcess, "List12", "VarAlice", "l"),
             };
 
             return _processList;
@@ -58,7 +58,7 @@ namespace SearchListOptimizing.ViewModel
     {
         public ProcessStepNotArrivedViewModel(ObservableCollection<CollectionUnitListObject> collectionUnitListObjects) 
         {
-            CollectionUnitsInProcess = collectionUnitListObjects.Where(x => x.Status == "5");
+            CollectionUnitsInProcess = collectionUnitListObjects.Where(x => x.Status == "05");
             Name = "Ej inkomna";
             ProcessLists = CreateProcessLists();
         }
@@ -67,18 +67,18 @@ namespace SearchListOptimizing.ViewModel
         {
             var _processList = new ObservableCollection<ProcessList>
             {
-                new ProcessList(CollectionUnitsInProcess, "List1", "Variable1", 1),
-                new ProcessList(CollectionUnitsInProcess, "List2", "Variable2", 1),
-                new ProcessList(CollectionUnitsInProcess, "List3", "Variable3", 1),
-                new ProcessList(CollectionUnitsInProcess, "List4", "Variable4", 1),
-                new ProcessList(CollectionUnitsInProcess, "List5", "Variable4", 2),
-                new ProcessList(CollectionUnitsInProcess, "List6", "Variable4", 3),
-                new ProcessList(CollectionUnitsInProcess, "List7", "Variable4", 4),
-                new ProcessList(CollectionUnitsInProcess, "List8", "Variable4", 5),
-                new ProcessList(CollectionUnitsInProcess, "List9", "Variable4", 6),
-                new ProcessList(CollectionUnitsInProcess, "List10", "Variable4", 7),
-                new ProcessList(CollectionUnitsInProcess, "List11", "Variable4", 8),
-                new ProcessList(CollectionUnitsInProcess, "List12", "Variable4", 9),
+                new ProcessList(CollectionUnitsInProcess, "List1", "VarAlice", "a"),
+                new ProcessList(CollectionUnitsInProcess, "List2", "VarAlice", "b"),
+                new ProcessList(CollectionUnitsInProcess, "List3", "VarAlice", "c"),
+                new ProcessList(CollectionUnitsInProcess, "List4", "VarAlice", "d"),
+                new ProcessList(CollectionUnitsInProcess, "List5", "VarAlice", "e"),
+                new ProcessList(CollectionUnitsInProcess, "List6", "VarAlice", "f"),
+                new ProcessList(CollectionUnitsInProcess, "List7", "VarAlice", "g"),
+                new ProcessList(CollectionUnitsInProcess, "List8", "VarAlice", "h"),
+                new ProcessList(CollectionUnitsInProcess, "List9", "VarAlice", "i"),
+                new ProcessList(CollectionUnitsInProcess, "List10", "VarAlice", "j"),
+                new ProcessList(CollectionUnitsInProcess, "List11", "VarAlice", "k"),
+                new ProcessList(CollectionUnitsInProcess, "List12", "VarAlice", "l"),
             };
 
             return _processList;
@@ -97,7 +97,7 @@ namespace SearchListOptimizing.ViewModel
     {
         private readonly IEnumerable<CollectionUnitListObject> _collectionUnitsInProcess;
 
-        public ProcessList(IEnumerable<CollectionUnitListObject> collectionUnitsInProcess, string nameOfList, string searchVariable, int searchValue)
+        public ProcessList(IEnumerable<CollectionUnitListObject> collectionUnitsInProcess, string nameOfList, string searchVariable, string searchValue)
         {
             _collectionUnitsInProcess = collectionUnitsInProcess;
             View = (CollectionView)new CollectionViewSource { Source = _collectionUnitsInProcess }.View;
@@ -110,13 +110,13 @@ namespace SearchListOptimizing.ViewModel
         public int ListCount => View?.Count ?? 0;
         public CollectionView View { get; set; }
 
-        private bool CustomerFilter(object item, string variableName, int variableValue)
+        private bool CustomerFilter(object item, string variableName, string variableValue)
         {
             var collectionUnit = item as CollectionUnitListObject;
             if (collectionUnit == null) return false;
             var listOfSearches = new List<bool>
             {
-                collectionUnit.SearchVariables.Any(x => x.Name == variableName && x.StringValue == $"value{variableValue}"),
+                collectionUnit.SearchVariables.Any(x => x.Name == variableName && x.StringValue.Contains(variableValue)),
             };
             return listOfSearches.All(x => x);
         }

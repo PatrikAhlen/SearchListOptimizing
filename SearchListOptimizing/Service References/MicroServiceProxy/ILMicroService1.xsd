@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://scb.se/il/contract/MicroClient/2015/11" elementFormDefault="qualified" targetNamespace="http://scb.se/il/contract/MicroClient/2015/11" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd2" namespace="http://scb.se/micro/contract/Client/2015/11" />
+  <xs:import schemaLocation="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Micro.Contract.Client.DataContract" />
+  <xs:import schemaLocation="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd6" namespace="http://scb.se/il/contract/Client/2012/09" />
+  <xs:element name="AddSurveyNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://scb.se/micro/contract/Client/2015/11" minOccurs="0" name="surveyNote" nillable="true" type="q1:SurveyNote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSurveyNoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://scb.se/micro/contract/Client/2015/11" minOccurs="0" name="AddSurveyNoteResult" nillable="true" type="q2:SurveyNote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSurveyNoteById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="surveyNoteId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSurveyNoteByIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteImportedSurveyNotesBySurveyId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="surveyId" type="q3:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteImportedSurveyNotesBySurveyIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSurveyNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="surveyId" type="q4:guid" />
+        <xs:element minOccurs="0" name="SCBId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSurveyNotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://scb.se/micro/contract/Client/2015/11" minOccurs="0" name="GetSurveyNotesResult" nillable="true" type="q5:ArrayOfSurveyNote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSurveyNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://scb.se/micro/contract/Client/2015/11" minOccurs="0" name="surveyNote" nillable="true" type="q6:SurveyNote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSurveyNoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://scb.se/micro/contract/Client/2015/11" minOccurs="0" name="UpdateSurveyNoteResult" nillable="true" type="q7:SurveyNote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportSurveyNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="surveryId" type="q8:guid" />
+        <xs:element minOccurs="0" name="createdDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="scbId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportSurveyNoteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPeriodicOverview">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="collectionRoundId" type="q9:guid" />
+        <xs:element minOccurs="0" name="scbId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="referenceStartDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPeriodicOverviewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Micro.Contract.Client.DataContract" minOccurs="0" name="GetPeriodicOverviewResult" nillable="true" type="q10:CollectionUnitPeriodOverview" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnswerCollections">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="collectionRoundId" type="q11:guid" />
+        <xs:element minOccurs="0" name="scbId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnswerCollectionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Micro.Contract.Client.DataContract" minOccurs="0" name="GetAnswerCollectionsResult" nillable="true" type="q12:CollectionUnitPeriodOverview" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateAnswerCollection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="collectionRoundId" type="q13:guid" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="coIdToActivate" type="q14:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateAnswerCollectionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeactivateAnswerCollection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="collectionRoundId" type="q15:guid" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="coIdToDeactivate" type="q16:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeactivateAnswerCollectionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewColletionOccasionFromMergedResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="collectionRoundId" type="q17:guid" />
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="collectionUnitId" type="q18:guid" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Micro.Contract.Client.DataContract" minOccurs="0" name="answerCollection" nillable="true" type="q19:AnswerCollection" />
+        <xs:element minOccurs="0" name="createdBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewColletionOccasionFromMergedResultResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSearchListItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="collectionRoundId" type="q20:guid" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="searchVariables" nillable="true" type="q21:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSearchListItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://scb.se/il/contract/Client/2012/09" minOccurs="0" name="GetSearchListItemsResult" nillable="true" type="q22:ArrayOfSearchListItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

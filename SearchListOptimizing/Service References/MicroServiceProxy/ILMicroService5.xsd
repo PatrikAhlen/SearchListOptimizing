@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Micro.Contract.Client.DataContract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Micro.Contract.Client.DataContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="CollectionUnitPeriodOverview">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnswerCollections" nillable="true" type="tns:ArrayOfAnswerCollection" />
+      <xs:element minOccurs="0" name="CollectionUnitName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CollectionUnitPeriodOverview" nillable="true" type="tns:CollectionUnitPeriodOverview" />
+  <xs:complexType name="ArrayOfAnswerCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AnswerCollection" nillable="true" type="tns:AnswerCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAnswerCollection" nillable="true" type="tns:ArrayOfAnswerCollection" />
+  <xs:complexType name="AnswerCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BackGroundVariables" nillable="true" type="tns:ArrayOfOverviewBackgroundVariable" />
+      <xs:element minOccurs="0" name="CollectionRoundShortname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DisplayLongAdditionalStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayLongStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayShortAdditionalStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayShortStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupVariables" nillable="true" type="tns:ArrayOfGroupVariable" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="InMediumDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenceStartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReferenceStopDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ScannedImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusAdditionalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusAdditionalCodeDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusCodeDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VariableGroups" nillable="true" type="tns:ArrayOfOverviewVariableGroup" />
+      <xs:element minOccurs="0" name="Variables" nillable="true" type="tns:ArrayOfOverviewVariable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnswerCollection" nillable="true" type="tns:AnswerCollection" />
+  <xs:complexType name="ArrayOfOverviewBackgroundVariable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OverviewBackgroundVariable" nillable="true" type="tns:OverviewBackgroundVariable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOverviewBackgroundVariable" nillable="true" type="tns:ArrayOfOverviewBackgroundVariable" />
+  <xs:complexType name="OverviewBackgroundVariable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Show" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverviewBackgroundVariable" nillable="true" type="tns:OverviewBackgroundVariable" />
+  <xs:complexType name="ArrayOfGroupVariable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupVariable" nillable="true" type="tns:GroupVariable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroupVariable" nillable="true" type="tns:ArrayOfGroupVariable" />
+  <xs:complexType name="GroupVariable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Show" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupVariable" nillable="true" type="tns:GroupVariable" />
+  <xs:complexType name="ArrayOfOverviewVariableGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OverviewVariableGroup" nillable="true" type="tns:OverviewVariableGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOverviewVariableGroup" nillable="true" type="tns:ArrayOfOverviewVariableGroup" />
+  <xs:complexType name="OverviewVariableGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VariableRows" nillable="true" type="tns:ArrayOfOverViewGroupVariableRow" />
+      <xs:element minOccurs="0" name="Variables" nillable="true" type="tns:ArrayOfOverviewGroupVariable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverviewVariableGroup" nillable="true" type="tns:OverviewVariableGroup" />
+  <xs:complexType name="ArrayOfOverViewGroupVariableRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OverViewGroupVariableRow" nillable="true" type="tns:OverViewGroupVariableRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOverViewGroupVariableRow" nillable="true" type="tns:ArrayOfOverViewGroupVariableRow" />
+  <xs:complexType name="OverViewGroupVariableRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RowIndex" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="Values" nillable="true" type="tns:ArrayOfOverviewGroupVariableCell" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverViewGroupVariableRow" nillable="true" type="tns:OverViewGroupVariableRow" />
+  <xs:complexType name="ArrayOfOverviewGroupVariableCell">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OverviewGroupVariableCell" nillable="true" type="tns:OverviewGroupVariableCell" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOverviewGroupVariableCell" nillable="true" type="tns:ArrayOfOverviewGroupVariableCell" />
+  <xs:complexType name="OverviewGroupVariableCell">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SortOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeOfValue" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverviewGroupVariableCell" nillable="true" type="tns:OverviewGroupVariableCell" />
+  <xs:complexType name="ArrayOfOverviewGroupVariable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OverviewGroupVariable" nillable="true" type="tns:OverviewGroupVariable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOverviewGroupVariable" nillable="true" type="tns:ArrayOfOverviewGroupVariable" />
+  <xs:complexType name="OverviewGroupVariable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Identifying" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SortOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverviewGroupVariable" nillable="true" type="tns:OverviewGroupVariable" />
+  <xs:complexType name="ArrayOfOverviewVariable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OverviewVariable" nillable="true" type="tns:OverviewVariable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOverviewVariable" nillable="true" type="tns:ArrayOfOverviewVariable" />
+  <xs:complexType name="OverviewVariable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Show" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOfValue" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverviewVariable" nillable="true" type="tns:OverviewVariable" />
+</xs:schema>

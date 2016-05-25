@@ -1,16 +1,29 @@
 using System;
 using System.Collections.Generic;
-using SearchListOptimizing.ILService;
+using System.Linq;
 
 namespace SearchListOptimizing.ViewModel
 {
     public class ProcessListModel
     {
+        private Guid collectionRoundId = new Guid("68A60FEE-F693-423F-8BA8-DB2F374E2A70");
+
         public List<CollectionUnitListObject> Load()
         {
-            return GenerateDummyObjects();
-            var ilProxy = new ILClientServiceClient();
-            ilProxy.get
+            string[] searchVariables = {"Lon", "NegativtHeltal", "VarAlice"};
+            //return GenerateDummyObjects();
+            var ilProxy = new MicroServiceProxy.ILMicroServiceClient();
+            var dataResult = ilProxy.GetSearchListItems(collectionRoundId, searchVariables);
+            return dataResult.Select(x => new CollectionUnitListObject
+            {
+                Id = Guid.Empty,
+                Name = x.Name,
+                Status = x.Status,
+                SearchVariables =
+                    x.SearchVariables.Select(s => new SearchVariable {Name = s.Name, StringValue = s.StringValue})
+                        .ToList()
+            }).ToList();
+            //return dataResult.ToString();
         }
 
         private List<CollectionUnitListObject> GenerateDummyObjects()

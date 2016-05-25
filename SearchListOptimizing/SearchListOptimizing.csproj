@@ -58,6 +58,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helpers\NotifyTaskCompletion.cs" />
+    <Compile Include="Service References\MicroServiceProxy\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\CollectionUnitListObject.cs" />
     <Compile Include="ViewModel\ProcessListModel.cs" />
     <Compile Include="ViewModel\ProcessListOverviewViewModel.cs" />
@@ -109,12 +114,62 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\MicroServiceProxy\ILMicroService.wsdl" />
+    <None Include="Service References\MicroServiceProxy\ILMicroService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MicroServiceProxy\ILMicroService1.wsdl" />
+    <None Include="Service References\MicroServiceProxy\ILMicroService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MicroServiceProxy\ILMicroService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MicroServiceProxy\ILMicroService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MicroServiceProxy\ILMicroService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MicroServiceProxy\ILMicroService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MicroServiceProxy\ILMicroService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MicroServiceProxy\SearchListOptimizing.MicroServiceProxy.CollectionUnitPeriodOverview.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MicroServiceProxy\SearchListOptimizing.MicroServiceProxy.SearchListItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MicroServiceProxy\SearchListOptimizing.MicroServiceProxy.SurveyNote.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\MicroServiceProxy\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MicroServiceProxy\ILMicroService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MicroServiceProxy\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MicroServiceProxy\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MicroServiceProxy\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

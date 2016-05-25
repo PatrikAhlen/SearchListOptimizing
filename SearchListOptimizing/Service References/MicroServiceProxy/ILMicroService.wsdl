@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://scb.se/il/contract/MicroClient/2015/11" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://scb.se/il/contract/MicroClient/2015/11" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://scb.se/il/contract/MicroClient/2015/11/Imports">
+      <xsd:import schemaLocation="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd0" namespace="http://scb.se/il/contract/MicroClient/2015/11" />
+      <xsd:import schemaLocation="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd3" namespace="http://scb.se/ide/datacontract/2011/12" />
+      <xsd:import schemaLocation="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd2" namespace="http://scb.se/micro/contract/Client/2015/11" />
+      <xsd:import schemaLocation="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Micro.Contract.Client.DataContract" />
+      <xsd:import schemaLocation="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost/IL.Service.WebHost/ILMicroService.svc?xsd=xsd6" namespace="http://scb.se/il/contract/Client/2012/09" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IILMicroService_AddSurveyNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSurveyNote" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_AddSurveyNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSurveyNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_AddSurveyNote_ErrorDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://scb.se/ide/datacontract/2011/12" name="detail" element="q1:ErrorDetail" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_DeleteSurveyNoteById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSurveyNoteById" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_DeleteSurveyNoteById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSurveyNoteByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_DeleteSurveyNoteById_ErrorDetailFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://scb.se/ide/datacontract/2011/12" name="detail" element="q2:ErrorDetail" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_DeleteImportedSurveyNotesBySurveyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteImportedSurveyNotesBySurveyId" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_DeleteImportedSurveyNotesBySurveyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteImportedSurveyNotesBySurveyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_DeleteImportedSurveyNotesBySurveyId_ErrorDetailFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://scb.se/ide/datacontract/2011/12" name="detail" element="q3:ErrorDetail" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_GetSurveyNotes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSurveyNotes" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_GetSurveyNotes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSurveyNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_GetSurveyNotes_ErrorDetailFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://scb.se/ide/datacontract/2011/12" name="detail" element="q4:ErrorDetail" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_UpdateSurveyNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSurveyNote" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_UpdateSurveyNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSurveyNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_UpdateSurveyNote_ErrorDetailFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://scb.se/ide/datacontract/2011/12" name="detail" element="q5:ErrorDetail" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_ImportSurveyNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportSurveyNote" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_ImportSurveyNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportSurveyNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_ImportSurveyNote_ErrorDetailFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://scb.se/ide/datacontract/2011/12" name="detail" element="q6:ErrorDetail" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_GetPeriodicOverview_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeriodicOverview" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_GetPeriodicOverview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeriodicOverviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_GetPeriodicOverview_ErrorDetailFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://scb.se/ide/datacontract/2011/12" name="detail" element="q7:ErrorDetail" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_GetAnswerCollections_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnswerCollections" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_GetAnswerCollections_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnswerCollectionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_GetAnswerCollections_ErrorDetailFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://scb.se/ide/datacontract/2011/12" name="detail" element="q8:ErrorDetail" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_ActivateAnswerCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateAnswerCollection" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_ActivateAnswerCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateAnswerCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_ActivateAnswerCollection_ErrorDetailFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://scb.se/ide/datacontract/2011/12" name="detail" element="q9:ErrorDetail" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_DeactivateAnswerCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateAnswerCollection" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_DeactivateAnswerCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateAnswerCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_DeactivateAnswerCollection_ErrorDetailFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://scb.se/ide/datacontract/2011/12" name="detail" element="q10:ErrorDetail" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_CreateNewColletionOccasionFromMergedResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewColletionOccasionFromMergedResult" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_CreateNewColletionOccasionFromMergedResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewColletionOccasionFromMergedResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_CreateNewColletionOccasionFromMergedResult_ErrorDetailFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://scb.se/ide/datacontract/2011/12" name="detail" element="q11:ErrorDetail" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_GetSearchListItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchListItems" />
+  </wsdl:message>
+  <wsdl:message name="IILMicroService_GetSearchListItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchListItemsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IILMicroService">
+    <wsdl:operation name="AddSurveyNote">
+      <wsdl:input wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/AddSurveyNote" message="tns:IILMicroService_AddSurveyNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/AddSurveyNoteResponse" message="tns:IILMicroService_AddSurveyNote_OutputMessage" />
+      <wsdl:fault wsaw:Action="FaultAction" name="ErrorDetailFault" message="tns:IILMicroService_AddSurveyNote_ErrorDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSurveyNoteById">
+      <wsdl:input wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/DeleteSurveyNoteById" message="tns:IILMicroService_DeleteSurveyNoteById_InputMessage" />
+      <wsdl:output wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/DeleteSurveyNoteByIdResponse" message="tns:IILMicroService_DeleteSurveyNoteById_OutputMessage" />
+      <wsdl:fault wsaw:Action="FaultAction" name="ErrorDetailFault" message="tns:IILMicroService_DeleteSurveyNoteById_ErrorDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteImportedSurveyNotesBySurveyId">
+      <wsdl:input wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/DeleteImportedSurveyNotesBySurveyId" message="tns:IILMicroService_DeleteImportedSurveyNotesBySurveyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/DeleteImportedSurveyNotesBySurveyIdResponse" message="tns:IILMicroService_DeleteImportedSurveyNotesBySurveyId_OutputMessage" />
+      <wsdl:fault wsaw:Action="FaultAction" name="ErrorDetailFault" message="tns:IILMicroService_DeleteImportedSurveyNotesBySurveyId_ErrorDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSurveyNotes">
+      <wsdl:input wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetSurveyNotes" message="tns:IILMicroService_GetSurveyNotes_InputMessage" />
+      <wsdl:output wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetSurveyNotesResponse" message="tns:IILMicroService_GetSurveyNotes_OutputMessage" />
+      <wsdl:fault wsaw:Action="FaultAction" name="ErrorDetailFault" message="tns:IILMicroService_GetSurveyNotes_ErrorDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSurveyNote">
+      <wsdl:input wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/UpdateSurveyNote" message="tns:IILMicroService_UpdateSurveyNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/UpdateSurveyNoteResponse" message="tns:IILMicroService_UpdateSurveyNote_OutputMessage" />
+      <wsdl:fault wsaw:Action="FaultAction" name="ErrorDetailFault" message="tns:IILMicroService_UpdateSurveyNote_ErrorDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportSurveyNote">
+      <wsdl:input wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/ImportSurveyNote" message="tns:IILMicroService_ImportSurveyNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/ImportSurveyNoteResponse" message="tns:IILMicroService_ImportSurveyNote_OutputMessage" />
+      <wsdl:fault wsaw:Action="FaultAction" name="ErrorDetailFault" message="tns:IILMicroService_ImportSurveyNote_ErrorDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeriodicOverview">
+      <wsdl:input wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetPeriodicOverview" message="tns:IILMicroService_GetPeriodicOverview_InputMessage" />
+      <wsdl:output wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetPeriodicOverviewResponse" message="tns:IILMicroService_GetPeriodicOverview_OutputMessage" />
+      <wsdl:fault wsaw:Action="FaultAction" name="ErrorDetailFault" message="tns:IILMicroService_GetPeriodicOverview_ErrorDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnswerCollections">
+      <wsdl:input wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetAnswerCollections" message="tns:IILMicroService_GetAnswerCollections_InputMessage" />
+      <wsdl:output wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetAnswerCollectionsResponse" message="tns:IILMicroService_GetAnswerCollections_OutputMessage" />
+      <wsdl:fault wsaw:Action="FaultAction" name="ErrorDetailFault" message="tns:IILMicroService_GetAnswerCollections_ErrorDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateAnswerCollection">
+      <wsdl:input wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/ActivateAnswerCollection" message="tns:IILMicroService_ActivateAnswerCollection_InputMessage" />
+      <wsdl:output wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/ActivateAnswerCollectionResponse" message="tns:IILMicroService_ActivateAnswerCollection_OutputMessage" />
+      <wsdl:fault wsaw:Action="FaultAction" name="ErrorDetailFault" message="tns:IILMicroService_ActivateAnswerCollection_ErrorDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateAnswerCollection">
+      <wsdl:input wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/DeactivateAnswerCollection" message="tns:IILMicroService_DeactivateAnswerCollection_InputMessage" />
+      <wsdl:output wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/DeactivateAnswerCollectionResponse" message="tns:IILMicroService_DeactivateAnswerCollection_OutputMessage" />
+      <wsdl:fault wsaw:Action="FaultAction" name="ErrorDetailFault" message="tns:IILMicroService_DeactivateAnswerCollection_ErrorDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewColletionOccasionFromMergedResult">
+      <wsdl:input wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/CreateNewColletionOccasionFromMergedResult" message="tns:IILMicroService_CreateNewColletionOccasionFromMergedResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/CreateNewColletionOccasionFromMergedResultResponse" message="tns:IILMicroService_CreateNewColletionOccasionFromMergedResult_OutputMessage" />
+      <wsdl:fault wsaw:Action="FaultAction" name="ErrorDetailFault" message="tns:IILMicroService_CreateNewColletionOccasionFromMergedResult_ErrorDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchListItems">
+      <wsdl:input wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetSearchListItems" message="tns:IILMicroService_GetSearchListItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetSearchListItemsResponse" message="tns:IILMicroService_GetSearchListItems_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
