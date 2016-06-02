@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace SearchListOptimizing.ViewModel
@@ -10,20 +11,41 @@ namespace SearchListOptimizing.ViewModel
 
         public List<CollectionUnitListObject> Load()
         {
-            string[] searchVariables = {"Lon", "NegativtHeltal", "VarAlice"};
+            Stopwatch timer = new Stopwatch();
+
+
+            string[] searchVariables = { "Lon", "NegativtHeltal", "VarAlice" };
             //return GenerateDummyObjects();
             var ilProxy = new MicroServiceProxy.ILMicroServiceClient();
+            timer.Start();
+            Debug.Print("Starting GetSearchListItems");
             var dataResult = ilProxy.GetSearchListItems(collectionRoundId, searchVariables);
-            return dataResult.Select(x => new CollectionUnitListObject
+            Debug.Print($"Duration of GetSearchListItems: {timer.Elapsed.TotalSeconds}");
+            timer.Restart();
+            var collectionUnitList = dataResult.Select(x => new CollectionUnitListObject
             {
                 Id = Guid.Empty,
                 Name = x.Name,
                 Status = x.Status,
+                ScbId = x.ScbId,
+                LastUpdatedBy = x.LastUpdatedBy,
+                LastUpdated = x.LastUpdated,
+                LoginName = string.Empty,
+                Password = string.Empty,
+                MemberInGroup = x.MemberInGroup.ToList(),
+                Selektor = x.Selektor,
+                AnswerCollectionDate = DateTime.Now,
                 SearchVariables =
-                    x.SearchVariables.Select(s => new SearchVariable {Name = s.Name, StringValue = s.StringValue})
+                    x.SearchVariables.Select(s => new SearchVariable
+                    {
+                        Name = s.Name,
+                        StringValue = s.StringValue
+                    })
                         .ToList()
             }).ToList();
-            //return dataResult.ToString();
+
+            Debug.Print("Objectmapping of {0}, duration: {1}", collectionUnitList.Count, timer.Elapsed.TotalSeconds);
+            return collectionUnitList;
         }
 
         private List<CollectionUnitListObject> GenerateDummyObjects()
@@ -49,7 +71,7 @@ namespace SearchListOptimizing.ViewModel
                         new SearchVariable {Name = "Variable8", StringValue = $"value{RandomizeStatus(randomizer)}"},
                         new SearchVariable {Name = "Variable9", StringValue = $"value{RandomizeStatus(randomizer)}"},
                         new SearchVariable {Name = "Variable10", StringValue = $"value{RandomizeStatus(randomizer)}"}
-                    } 
+                    }
                 });
             }
             return collectionUnits;

@@ -11,5 +11,12 @@ namespace SearchListOptimizing.ViewModel
         public string Status { get; set; }
 
         public List<SearchVariable> SearchVariables { get; set; }
+        public string LastUpdatedBy { get; set; }
+        public DateTime? LastUpdated { get; set; }
+        public string LoginName { get; set; }
+        public string Password { get; set; }
+        public List<string> MemberInGroup { get; set; }
+        public int? Selektor { get; set; }
+        public DateTime AnswerCollectionDate { get; set; }
     }
 }

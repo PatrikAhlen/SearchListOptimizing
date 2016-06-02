@@ -1369,16 +1369,34 @@ namespace SearchListOptimizing.MicroServiceProxy {
         private string AdditionalStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> LastUpdatedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastUpdatedByField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LoginNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string[] MemberInGroupField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ScbIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private SearchListOptimizing.MicroServiceProxy.SearchVariable[] SearchVariablesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> SelektorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StatusField;
@@ -1402,6 +1420,58 @@ namespace SearchListOptimizing.MicroServiceProxy {
                 if ((object.ReferenceEquals(this.AdditionalStatusField, value) != true)) {
                     this.AdditionalStatusField = value;
                     this.RaisePropertyChanged("AdditionalStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> LastUpdated {
+            get {
+                return this.LastUpdatedField;
+            }
+            set {
+                if ((this.LastUpdatedField.Equals(value) != true)) {
+                    this.LastUpdatedField = value;
+                    this.RaisePropertyChanged("LastUpdated");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastUpdatedBy {
+            get {
+                return this.LastUpdatedByField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastUpdatedByField, value) != true)) {
+                    this.LastUpdatedByField = value;
+                    this.RaisePropertyChanged("LastUpdatedBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LoginName {
+            get {
+                return this.LoginNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LoginNameField, value) != true)) {
+                    this.LoginNameField = value;
+                    this.RaisePropertyChanged("LoginName");
                 }
             }
         }
@@ -1433,6 +1503,19 @@ namespace SearchListOptimizing.MicroServiceProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string ScbId {
             get {
                 return this.ScbIdField;
@@ -1454,6 +1537,19 @@ namespace SearchListOptimizing.MicroServiceProxy {
                 if ((object.ReferenceEquals(this.SearchVariablesField, value) != true)) {
                     this.SearchVariablesField = value;
                     this.RaisePropertyChanged("SearchVariables");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Selektor {
+            get {
+                return this.SelektorField;
+            }
+            set {
+                if ((this.SelektorField.Equals(value) != true)) {
+                    this.SelektorField = value;
+                    this.RaisePropertyChanged("Selektor");
                 }
             }
         }
@@ -1677,6 +1773,7 @@ namespace SearchListOptimizing.MicroServiceProxy {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetSearchListItems", ReplyAction="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetSearchListItemsR" +
             "esponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SearchListOptimizing.MicroServiceProxy.ErrorDetail), Action="FaultAction", Name="ErrorDetail", Namespace="http://scb.se/ide/datacontract/2011/12")]
         SearchListOptimizing.MicroServiceProxy.SearchListItem[] GetSearchListItems(System.Guid collectionRoundId, string[] searchVariables);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetSearchListItems", ReplyAction="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetSearchListItemsR" +

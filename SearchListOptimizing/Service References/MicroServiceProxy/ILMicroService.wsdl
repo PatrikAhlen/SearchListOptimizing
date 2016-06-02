@@ -116,6 +116,9 @@
   <wsdl:message name="IILMicroService_GetSearchListItems_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSearchListItemsResponse" />
   </wsdl:message>
+  <wsdl:message name="IILMicroService_GetSearchListItems_ErrorDetailFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://scb.se/ide/datacontract/2011/12" name="detail" element="q12:ErrorDetail" />
+  </wsdl:message>
   <wsdl:portType name="IILMicroService">
     <wsdl:operation name="AddSurveyNote">
       <wsdl:input wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/AddSurveyNote" message="tns:IILMicroService_AddSurveyNote_InputMessage" />
@@ -175,6 +178,7 @@
     <wsdl:operation name="GetSearchListItems">
       <wsdl:input wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetSearchListItems" message="tns:IILMicroService_GetSearchListItems_InputMessage" />
       <wsdl:output wsaw:Action="http://scb.se/il/contract/MicroClient/2015/11/IILMicroService/GetSearchListItemsResponse" message="tns:IILMicroService_GetSearchListItems_OutputMessage" />
+      <wsdl:fault wsaw:Action="FaultAction" name="ErrorDetailFault" message="tns:IILMicroService_GetSearchListItems_ErrorDetailFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

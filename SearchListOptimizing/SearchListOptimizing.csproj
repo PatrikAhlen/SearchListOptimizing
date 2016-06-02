@@ -64,9 +64,13 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\CollectionUnitListObject.cs" />
+    <Compile Include="ViewModel\ProcessList.cs" />
     <Compile Include="ViewModel\ProcessListModel.cs" />
     <Compile Include="ViewModel\ProcessListOverviewViewModel.cs" />
-    <Compile Include="ViewModel\ProcessStepViewModel.cs" />
+    <Compile Include="ViewModel\ProcessStepAnsweredNotReady.cs" />
+    <Compile Include="ViewModel\ProcessStepNotArrivedViewModel.cs" />
+    <Compile Include="ViewModel\ProcessStepNotSentViewModel.cs" />
+    <Compile Include="ViewModel\ProcessStepViewModelBase.cs" />
     <Compile Include="ViewModel\PropertyUtil.cs" />
     <Compile Include="ViewModel\SearchVariable.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
