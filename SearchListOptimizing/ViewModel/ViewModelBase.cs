@@ -17,6 +17,7 @@ namespace SearchListOptimizing.ViewModel
 
         protected ViewModelBase()
         {
+            Mediator.Mediator.Instance.Register(this);
             ResizeMode = ResizeMode.NoResize;
             IsDisposed = false;
             HasHiddenInformation = false;

@@ -5,18 +5,9 @@ using System.Windows.Data;
 
 namespace SearchListOptimizing.ViewModel
 {
-    public class ProcessStepAnsweredNotReady : ProcessStepViewModelBase
+    public class ProcessStepToBeInvestigatedViewModel : ProcessStepViewModelBase
     {
-        private readonly List<string> _statusCodes = new List<string>{"07", "10"};
         private ProcessList _selectedIndex;
-
-        public ProcessStepAnsweredNotReady(ObservableCollection<CollectionUnitListObject> collectionUnitListObjects)
-        {
-            CollectionUnitsInProcess = collectionUnitListObjects.Where(x => _statusCodes.Contains(x.Status));
-            Name = "Inkomna, ej redo";
-            ProcessLists = CreateProcessLists();
-        }
-
         public override CollectionView View { get; set; }
         public override int ViewCount => CollectionUnitsInProcess.Count();
         public override IEnumerable<CollectionUnitListObject> CollectionUnitsInProcess { get; set; }
@@ -44,6 +35,14 @@ namespace SearchListOptimizing.ViewModel
                 OnPropertyChanged(() => SelectedList);
                 Mediator.Mediator.Instance.NotifyColleagues("ListSelected", SelectedList);
             }
+        }
+
+        public ProcessStepToBeInvestigatedViewModel(ObservableCollection<CollectionUnitListObject> collectionUnitListObjects)
+        {
+            var statusList = new List<string> {"19","21", "25", "25"};
+            CollectionUnitsInProcess = collectionUnitListObjects.Where(x => statusList.Contains(x.Status));
+            Name = "Ska utredas";
+            ProcessLists = CreateProcessLists();
         }
 
         private ObservableCollection<ProcessList> CreateProcessLists()

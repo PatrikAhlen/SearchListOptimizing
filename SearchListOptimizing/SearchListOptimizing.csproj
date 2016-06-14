@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -58,18 +59,27 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helpers\NotifyTaskCompletion.cs" />
+    <Compile Include="Mediator\IMediator.cs" />
+    <Compile Include="Mediator\Mediator.cs" />
+    <Compile Include="Mediator\MediatorMessageSinkAttribute.cs" />
+    <Compile Include="Mediator\MessageToActionsMap.cs" />
+    <Compile Include="Mediator\WeakAction.cs" />
     <Compile Include="Service References\MicroServiceProxy\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\ProcessStepDoneViewModel.cs" />
     <Compile Include="ViewModel\CollectionUnitListObject.cs" />
     <Compile Include="ViewModel\ProcessList.cs" />
     <Compile Include="ViewModel\ProcessListModel.cs" />
     <Compile Include="ViewModel\ProcessListOverviewViewModel.cs" />
     <Compile Include="ViewModel\ProcessStepAnsweredNotReady.cs" />
+    <Compile Include="ViewModel\ProcessStepDuplicateViewModel.cs" />
     <Compile Include="ViewModel\ProcessStepNotArrivedViewModel.cs" />
     <Compile Include="ViewModel\ProcessStepNotSentViewModel.cs" />
+    <Compile Include="ViewModel\ProcessStepRemovedViewModel.cs" />
+    <Compile Include="ViewModel\ProcessStepToBeInvestigatedViewModel.cs" />
     <Compile Include="ViewModel\ProcessStepViewModelBase.cs" />
     <Compile Include="ViewModel\PropertyUtil.cs" />
     <Compile Include="ViewModel\SearchVariable.cs" />

@@ -7,6 +7,8 @@ namespace SearchListOptimizing.ViewModel
 {
     public class ProcessStepNotArrivedViewModel : ProcessStepViewModelBase
     {
+        private ProcessList _selectedIndex;
+
         public ProcessStepNotArrivedViewModel(ObservableCollection<CollectionUnitListObject> collectionUnitListObjects) 
         {
             CollectionUnitsInProcess = collectionUnitListObjects.Where(x => x.Status == "05");
@@ -17,6 +19,30 @@ namespace SearchListOptimizing.ViewModel
 
 
         public override ObservableCollection<ProcessList> ProcessLists { get; set; }
+        public override ProcessList SelectedList
+        {
+            get
+            {
+                return _selectedIndex;
+            }
+
+            set
+            {
+                if (_selectedIndex == value)
+                {
+                    return;
+                }
+
+                // At this point _selectedIndex is the old selected item's index
+
+                _selectedIndex = value;
+
+                // At this point _selectedIndex is the new selected item's index
+
+                OnPropertyChanged(() => SelectedList);
+                Mediator.Mediator.Instance.NotifyColleagues("ListSelected", SelectedList);
+            }
+        }
 
         public sealed override CollectionView View { get; set; }
         public override int ViewCount => CollectionUnitsInProcess.Count();

@@ -1,22 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace SearchListOptimizing.ViewModel
 {
-    public class ProcessStepAnsweredNotReady : ProcessStepViewModelBase
+    class ProcessStepDuplicateViewModel : ProcessStepViewModelBase
     {
-        private readonly List<string> _statusCodes = new List<string>{"07", "10"};
         private ProcessList _selectedIndex;
-
-        public ProcessStepAnsweredNotReady(ObservableCollection<CollectionUnitListObject> collectionUnitListObjects)
-        {
-            CollectionUnitsInProcess = collectionUnitListObjects.Where(x => _statusCodes.Contains(x.Status));
-            Name = "Inkomna, ej redo";
-            ProcessLists = CreateProcessLists();
-        }
-
         public override CollectionView View { get; set; }
         public override int ViewCount => CollectionUnitsInProcess.Count();
         public override IEnumerable<CollectionUnitListObject> CollectionUnitsInProcess { get; set; }
@@ -44,6 +38,13 @@ namespace SearchListOptimizing.ViewModel
                 OnPropertyChanged(() => SelectedList);
                 Mediator.Mediator.Instance.NotifyColleagues("ListSelected", SelectedList);
             }
+        }
+
+        public ProcessStepDuplicateViewModel(ObservableCollection<CollectionUnitListObject> collectionUnitListObjects)
+        {
+            CollectionUnitsInProcess = collectionUnitListObjects.Where(x => x.Status == "08");
+            Name = "Dubbletter";
+            ProcessLists = CreateProcessLists();
         }
 
         private ObservableCollection<ProcessList> CreateProcessLists()

@@ -13,6 +13,8 @@ namespace SearchListOptimizing.ViewModel
         public abstract string Name { get; set; }
 
         public abstract ObservableCollection<ProcessList> ProcessLists { get; set; }
+
+        public abstract ProcessList SelectedList { get; set; }
         
     }
 }

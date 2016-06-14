@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 
@@ -7,7 +8,12 @@ namespace SearchListOptimizing.ViewModel
 {
     public class ProcessListModel
     {
-        private Guid collectionRoundId = new Guid("68A60FEE-F693-423F-8BA8-DB2F374E2A70");
+        
+        //private Guid collectionRoundId = new Guid("68A60FEE-F693-423F-8BA8-DB2F374E2A70");
+
+        private Guid collectionRoundId = ConfigurationManager.AppSettings["CollectionRoundId"] == null
+            ? Guid.Empty
+            : Guid.Parse(ConfigurationManager.AppSettings["CollectionRoundId"]);
 
         public List<CollectionUnitListObject> Load()
         {
@@ -30,8 +36,8 @@ namespace SearchListOptimizing.ViewModel
                 ScbId = x.ScbId,
                 LastUpdatedBy = x.LastUpdatedBy,
                 LastUpdated = x.LastUpdated,
-                LoginName = string.Empty,
-                Password = string.Empty,
+                LoginName = x.LoginName,
+                Password = x.Password,
                 MemberInGroup = x.MemberInGroup.ToList(),
                 Selektor = x.Selektor,
                 AnswerCollectionDate = DateTime.Now,

@@ -1,24 +1,24 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Data;
 
 namespace SearchListOptimizing.ViewModel
 {
-    public class ProcessStepAnsweredNotReady : ProcessStepViewModelBase
+    public class ProcessStepRemovedViewModel : ProcessStepViewModelBase
     {
-        private readonly List<string> _statusCodes = new List<string>{"07", "10"};
         private ProcessList _selectedIndex;
 
-        public ProcessStepAnsweredNotReady(ObservableCollection<CollectionUnitListObject> collectionUnitListObjects)
+        public ProcessStepRemovedViewModel(ObservableCollection<CollectionUnitListObject> collectionUnitListObjects)
         {
-            CollectionUnitsInProcess = collectionUnitListObjects.Where(x => _statusCodes.Contains(x.Status));
-            Name = "Inkomna, ej redo";
+            var statusList = new List<string> { "17", "18"};
+            CollectionUnitsInProcess = collectionUnitListObjects.Where(x => statusList.Contains(x.Status));
+            Name = "Bortplockade";
             ProcessLists = CreateProcessLists();
         }
 
         public override CollectionView View { get; set; }
-        public override int ViewCount => CollectionUnitsInProcess.Count();
+        public override int ViewCount { get; }
         public override IEnumerable<CollectionUnitListObject> CollectionUnitsInProcess { get; set; }
         public override string Name { get; set; }
         public override ObservableCollection<ProcessList> ProcessLists { get; set; }
