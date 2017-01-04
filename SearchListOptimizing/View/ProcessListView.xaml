@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:SearchListOptimizing.View"
              xmlns:viewModel="clr-namespace:SearchListOptimizing.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="150" d:DataContext="{d:DesignInstance viewModel:ProcessListOverviewViewModel}">
-    <Grid>
+             d:DesignHeight="1000" d:DesignWidth="150" d:DataContext="{d:DesignInstance viewModel:ProcessListOverviewViewModel}">
+    <Grid Background="LightSlateGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
@@ -19,6 +19,7 @@
                     <TextBlock Text="ProcessListor"/>
                     <TextBlock Margin="5 0" Text="{Binding CollectionUnitCount}"/>
                 </StackPanel>
+                
                 <StackPanel Margin="5" DataContext="{Binding ProcessStepNotSent}" Orientation="Vertical" VerticalAlignment="Stretch">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
@@ -36,7 +37,7 @@
                     </ListView>
                 </StackPanel>
                 <!--Ej inkomna-->
-                <StackPanel Margin="5" DataContext="{Binding ProcessStepNotAnswered}" Orientation="Vertical" VerticalAlignment="Stretch">
+                <StackPanel Margin="5" DataContext="{Binding ProcessStepNotAnswered}" Orientation="Vertical" VerticalAlignment="Stretch" >
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
                         <TextBlock Text="{Binding ViewCount}" Margin="5 0"/>
@@ -145,8 +146,11 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackPanel>
-                
+                <StackPanel>
+                    <TextBlock x:Name="tbFontAwesome" Text="&#xf00b;" FontFamily="{StaticResource FontAwesome}" Foreground="DarkSlateGray" FontSize="18" Margin="10" VerticalAlignment="Center"></TextBlock>
+                </StackPanel>
             </StackPanel>
+            
         </ScrollViewer>
         <DataGrid Grid.Column="1" ItemsSource="{Binding SelectedList.View, Mode=TwoWay}"></DataGrid>
     </Grid>

@@ -8,7 +8,7 @@ namespace SearchListOptimizing.ViewModel
 {
     public class ProcessListModel
     {
-        
+
         //private Guid collectionRoundId = new Guid("68A60FEE-F693-423F-8BA8-DB2F374E2A70");
 
         private Guid collectionRoundId = ConfigurationManager.AppSettings["CollectionRoundId"] == null
@@ -20,7 +20,7 @@ namespace SearchListOptimizing.ViewModel
             Stopwatch timer = new Stopwatch();
 
 
-            string[] searchVariables = { "Lon", "NegativtHeltal", "VarAlice" };
+            string[] searchVariables = { "Exp", "Sni", "Blk", "Jur" };
             //return GenerateDummyObjects();
             var ilProxy = new MicroServiceProxy.ILMicroServiceClient();
             timer.Start();
@@ -41,13 +41,11 @@ namespace SearchListOptimizing.ViewModel
                 MemberInGroup = x.MemberInGroup.ToList(),
                 Selektor = x.Selektor,
                 AnswerCollectionDate = DateTime.Now,
-                SearchVariables =
-                    x.SearchVariables.Select(s => new SearchVariable
-                    {
-                        Name = s.Name,
-                        StringValue = s.StringValue
-                    })
-                        .ToList()
+                SearchVariables = x.SearchVariables.Select(s => new SearchVariable
+                {
+                    Name = s.Name,
+                    StringValue = s.StringValue
+                }).ToList()
             }).ToList();
 
             Debug.Print("Objectmapping of {0}, duration: {1}", collectionUnitList.Count, timer.Elapsed.TotalSeconds);

@@ -50,18 +50,18 @@ namespace SearchListOptimizing.ViewModel
         {
             var processList = new ObservableCollection<ProcessList>
             {
-                new ProcessList(CollectionUnitsInProcess, "List a", "VarAlice", "a"),
-                new ProcessList(CollectionUnitsInProcess, "List b", "VarAlice", "b"),
-                new ProcessList(CollectionUnitsInProcess, "List c", "VarAlice", "c"),
-                new ProcessList(CollectionUnitsInProcess, "List d", "VarAlice", "d"),
-                new ProcessList(CollectionUnitsInProcess, "List e", "VarAlice", "e"),
-                new ProcessList(CollectionUnitsInProcess, "List f", "VarAlice", "f"),
-                new ProcessList(CollectionUnitsInProcess, "List g", "VarAlice", "g"),
-                new ProcessList(CollectionUnitsInProcess, "List h", "VarAlice", "h"),
-                new ProcessList(CollectionUnitsInProcess, "List i", "VarAlice", "i"),
-                new ProcessList(CollectionUnitsInProcess, "List j", "VarAlice", "j"),
-                new ProcessList(CollectionUnitsInProcess, "List k", "VarAlice", "k"),
-                new ProcessList(CollectionUnitsInProcess, "List l", "VarAlice", "l"),
+                new ProcessList(CollectionUnitsInProcess, "List a", "Jur", "a"),
+                new ProcessList(CollectionUnitsInProcess, "List b", "Jur", "b"),
+                new ProcessList(CollectionUnitsInProcess, "List c", "Jur", "c"),
+                new ProcessList(CollectionUnitsInProcess, "List d", "Jur", "d"),
+                new ProcessList(CollectionUnitsInProcess, "List e", "Jur", "e"),
+                new ProcessList(CollectionUnitsInProcess, "List f", "Jur", "f"),
+                new ProcessList(CollectionUnitsInProcess, "List g", "Jur", "g"),
+                new ProcessList(CollectionUnitsInProcess, "List h", "Jur", "h"),
+                new ProcessList(CollectionUnitsInProcess, "List i", "Jur", "i"),
+                new ProcessList(CollectionUnitsInProcess, "List j", "Jur", "j"),
+                new ProcessList(CollectionUnitsInProcess, "List k", "Jur", "k"),
+                new ProcessList(CollectionUnitsInProcess, "List l", "Jur", "l"),
             };
 
             return processList;
