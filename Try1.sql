@@ -28,3 +28,4 @@ SET @collectionRoundId = '68A60FEE-F693-423F-8BA8-DB2F374E2A70'
     FROM  [Triton].[vwAnswerPreviousSearch] AS [Extent1]
     INNER JOIN [Triton].[vwCollectionUnitWithCurrentStatus] AS [Extent2] ON [Extent1].[fkCollectionUnitId] = [Extent2].[Id]
     WHERE ([Extent1].[Type] IN (N'Lon', N'NegativtHeltal', N'VarAlice')) AND ([Extent2].[CollectionRoundId] = @collectionRoundId)
+//comment
